@@ -1,13 +1,13 @@
 import { Feature, FeatureCollection, LineString, Point } from "geojson";
-import bearing from "@turf/bearing";
-import centroid from "@turf/centroid";
-import destination from "@turf/destination";
+import { bearing } from "@turf/bearing";
+import { centroid } from "@turf/centroid";
+import { destination } from "@turf/destination";
 import { featureCollection, lineString, point } from "@turf/helpers";
 import { getCoord } from "@turf/invariant";
-import length from "@turf/length";
+import { length } from "@turf/length";
 import { featureEach, segmentEach, segmentReduce } from "@turf/meta";
 
-export interface DirectionalMeanLine extends Feature<LineString> {
+interface DirectionalMeanLine extends Feature<LineString> {
   properties: {
     cartesianAngle: number;
     bearingAngle: number;
@@ -51,7 +51,7 @@ export interface DirectionalMeanLine extends Feature<LineString> {
  * var directionalMeanLine = turf.directionalMean(lines);
  * // => directionalMeanLine
  */
-export default function directionalMean(
+function directionalMean(
   lines: FeatureCollection<LineString>,
   options: {
     planar?: boolean;
@@ -289,3 +289,6 @@ function getMeanLineString(
     return [getCoord(begin), getCoord(end)];
   }
 }
+
+export { directionalMean, DirectionalMeanLine };
+export default directionalMean;

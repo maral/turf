@@ -1,6 +1,6 @@
 import { Point, FeatureCollection, Polygon, MultiPolygon } from "geojson";
-import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
-import clone from "@turf/clone";
+import { booleanPointInPolygon } from "@turf/boolean-point-in-polygon";
+import { clone } from "@turf/clone";
 import { featureEach } from "@turf/meta";
 
 /**
@@ -61,4 +61,5 @@ function tag(
   return points;
 }
 
+export { tag };
 export default tag;

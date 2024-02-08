@@ -1,6 +1,6 @@
-import bearing from "@turf/bearing";
+import { bearing } from "@turf/bearing";
 import { bearingToAzimuth, Coord, isObject } from "@turf/helpers";
-import rhumbBearing from "@turf/rhumb-bearing";
+import { rhumbBearing } from "@turf/rhumb-bearing";
 
 /**
  * Finds the angle formed by two adjacent segments defined by 3 points. The result will be the (positive clockwise)
@@ -64,4 +64,5 @@ function angle(
   return angleAO;
 }
 
+export { angle };
 export default angle;

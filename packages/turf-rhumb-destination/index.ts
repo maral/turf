@@ -63,8 +63,8 @@ function rhumbDestination<P extends GeoJsonProperties = GeoJsonProperties>(
     destination[0] - coords[0] > 180
       ? -360
       : coords[0] - destination[0] > 180
-      ? 360
-      : 0;
+        ? 360
+        : 0;
   return point(destination, options.properties);
 }
 
@@ -123,4 +123,5 @@ function calculateRhumbDestination(
   ]; // normalise to −180..+180°
 }
 
+export { rhumbDestination };
 export default rhumbDestination;

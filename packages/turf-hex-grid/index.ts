@@ -1,5 +1,5 @@
-import distance from "@turf/distance";
-import intersect from "@turf/intersect";
+import { distance } from "@turf/distance";
+import { intersect } from "@turf/intersect";
 import {
   Feature,
   FeatureCollection,
@@ -215,4 +215,5 @@ function hexTriangles(
   return triangles;
 }
 
+export { hexGrid };
 export default hexGrid;

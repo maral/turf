@@ -8,7 +8,7 @@ import type {
   GeoJsonProperties,
   Position,
 } from "geojson";
-import pointInPolygon from "@turf/boolean-point-in-polygon";
+import { booleanPointInPolygon as pointInPolygon } from "@turf/boolean-point-in-polygon";
 import { featureCollection, multiPoint } from "@turf/helpers";
 import { geomEach, featureEach, coordEach } from "@turf/meta";
 
@@ -90,4 +90,5 @@ function pointsWithinPolygon<
   return featureCollection(results);
 }
 
+export { pointsWithinPolygon };
 export default pointsWithinPolygon;

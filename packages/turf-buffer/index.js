@@ -1,4 +1,4 @@
-import center from "@turf/center";
+import { center } from "@turf/center";
 import jsts from "@turf/jsts";
 import { geomEach, featureEach } from "@turf/meta";
 import { geoAzimuthalEquidistant } from "d3-geo";
@@ -180,4 +180,5 @@ function defineProjection(geojson) {
   return geoAzimuthalEquidistant().rotate(rotation).scale(earthRadius);
 }
 
+export { buffer };
 export default buffer;

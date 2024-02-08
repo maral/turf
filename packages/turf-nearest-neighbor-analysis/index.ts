@@ -5,12 +5,12 @@ import {
   Polygon,
   GeoJsonProperties,
 } from "geojson";
-import area from "@turf/area";
-import bbox from "@turf/bbox";
-import bboxPolygon from "@turf/bbox-polygon";
-import centroid from "@turf/centroid";
-import distance from "@turf/distance";
-import nearestPoint from "@turf/nearest-point";
+import { area } from "@turf/area";
+import { bbox } from "@turf/bbox";
+import { bboxPolygon } from "@turf/bbox-polygon";
+import { centroid } from "@turf/centroid";
+import { distance } from "@turf/distance";
+import { nearestPoint } from "@turf/nearest-point";
 import { featureEach } from "@turf/meta";
 import {
   convertArea,
@@ -19,7 +19,7 @@ import {
   AreaUnits,
 } from "@turf/helpers";
 
-export interface NearestNeighborStatistics {
+interface NearestNeighborStatistics {
   units: Units & AreaUnits;
   arealUnits: string;
   observedMeanDistance: number;
@@ -28,7 +28,7 @@ export interface NearestNeighborStatistics {
   zScore: number;
 }
 
-export interface NearestNeighborStudyArea extends Feature<Polygon> {
+interface NearestNeighborStudyArea extends Feature<Polygon> {
   properties: {
     nearestNeighborAnalysis: NearestNeighborStatistics;
     [key: string]: any;
@@ -142,4 +142,9 @@ function nearestNeighborAnalysis(
   return studyArea as NearestNeighborStudyArea;
 }
 
+export {
+  nearestNeighborAnalysis,
+  NearestNeighborStatistics,
+  NearestNeighborStudyArea,
+};
 export default nearestNeighborAnalysis;

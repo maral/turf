@@ -167,4 +167,5 @@ function deepSlice<C = any[]>(coords: C): C {
   });
 }
 
+export { clone, cloneProperties };
 export default clone;

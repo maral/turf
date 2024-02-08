@@ -1,5 +1,5 @@
-import length from "@turf/length";
-import lineSliceAlong from "@turf/line-slice-along";
+import { length } from "@turf/length";
+import { lineSliceAlong } from "@turf/line-slice-along";
 import { flattenEach } from "@turf/meta";
 import { featureCollection, isObject } from "@turf/helpers";
 
@@ -84,4 +84,5 @@ function sliceLineSegments(line, segmentLength, units, callback) {
   }
 }
 
+export { lineChunk };
 export default lineChunk;

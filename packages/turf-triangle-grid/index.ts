@@ -5,8 +5,8 @@ import {
   FeatureCollection,
   GeoJsonProperties,
 } from "geojson";
-import distance from "@turf/distance";
-import intersect from "@turf/intersect";
+import { distance } from "@turf/distance";
+import { intersect } from "@turf/intersect";
 import { polygon, featureCollection, Units } from "@turf/helpers";
 
 /**
@@ -180,4 +180,5 @@ function triangleGrid<P extends GeoJsonProperties = GeoJsonProperties>(
   return featureCollection(results);
 }
 
+export { triangleGrid };
 export default triangleGrid;

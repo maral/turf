@@ -1,6 +1,6 @@
-import bearing from "@turf/bearing";
-import distance from "@turf/distance";
-import destination from "@turf/destination";
+import { bearing } from "@turf/bearing";
+import { distance } from "@turf/distance";
+import { destination } from "@turf/destination";
 import { lineString, isObject } from "@turf/helpers";
 
 /**
@@ -84,4 +84,5 @@ function lineSliceAlong(line, startDist, stopDist, options) {
   return lineString([last, last]);
 }
 
+export { lineSliceAlong };
 export default lineSliceAlong;

@@ -23,10 +23,7 @@ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABI
 TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-interface Point {
-  x: number;
-  y: number;
-}
+type Point = number[]; // [number, number] | [number, number, number];
 
 declare function simplify<T extends Point>(
   points: T[],
@@ -35,4 +32,5 @@ declare function simplify<T extends Point>(
 ): T[];
 declare namespace simplify {}
 
-export = simplify;
+export { simplify };
+export default simplify;

@@ -1,9 +1,9 @@
 import { Feature, Geometry, MultiPoint } from "geojson";
 import { segmentEach } from "@turf/meta";
 import { getGeom } from "@turf/invariant";
-import lineOverlap from "@turf/line-overlap";
-import lineIntersect from "@turf/line-intersect";
-import GeojsonEquality from "geojson-equality";
+import { lineOverlap } from "@turf/line-overlap";
+import { lineIntersect } from "@turf/line-intersect";
+import { GeojsonEquality } from "@turf/helpers";
 
 /**
  * Compares two geometries of the same dimension and returns true if their intersection set results in a geometry
@@ -26,7 +26,7 @@ import GeojsonEquality from "geojson-equality";
  * turf.booleanOverlap(poly2, poly3)
  * //=false
  */
-export default function booleanOverlap(
+function booleanOverlap(
   feature1: Feature<any> | Geometry,
   feature2: Feature<any> | Geometry
 ): boolean {
@@ -88,3 +88,6 @@ export default function booleanOverlap(
 
   return overlap > 0;
 }
+
+export { booleanOverlap };
+export default booleanOverlap;

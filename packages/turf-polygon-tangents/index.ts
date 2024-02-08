@@ -9,9 +9,9 @@ import type {
 import type { Coord } from "@turf/helpers";
 import { getCoords, getType } from "@turf/invariant";
 import { point, featureCollection } from "@turf/helpers";
-import calcBbox from "@turf/bbox";
-import explode from "@turf/explode";
-import nearestPoint from "@turf/nearest-point";
+import { bbox as calcBbox } from "@turf/bbox";
+import { explode } from "@turf/explode";
+import { nearestPoint } from "@turf/nearest-point";
 
 /**
  * Finds the tangents of a {@link Polygon|(Multi)Polygon} from a {@link Point}.
@@ -151,4 +151,5 @@ function isLeft(point1: Position, point2: Position, point3: Position) {
   );
 }
 
+export { polygonTangents };
 export default polygonTangents;

@@ -1,6 +1,6 @@
 import { Feature, Geometry, LineString, Point } from "geojson";
-import booleanPointOnLine from "@turf/boolean-point-on-line";
-import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
+import { booleanPointOnLine } from "@turf/boolean-point-on-line";
+import { booleanPointInPolygon } from "@turf/boolean-point-in-polygon";
 import { getGeom } from "@turf/invariant";
 
 /**
@@ -790,4 +790,5 @@ function compareCoords(pair1: number[], pair2: number[]) {
   return pair1[0] === pair2[0] && pair1[1] === pair2[1];
 }
 
+export { booleanTouches };
 export default booleanTouches;

@@ -1,4 +1,4 @@
-import distance from "@turf/distance";
+import { distance } from "@turf/distance";
 import { feature, featureCollection } from "@turf/helpers";
 import {
   Feature,
@@ -9,8 +9,8 @@ import {
 } from "geojson";
 import { Units } from "@turf/helpers";
 import { featureEach } from "@turf/meta";
-import tin from "@turf/tin";
-import dissolve from "./lib/turf-dissolve";
+import { tin } from "@turf/tin";
+import { dissolve } from "./lib/turf-dissolve";
 
 /**
  * Takes a set of {@link Point|points} and returns a concave hull Polygon or MultiPolygon.
@@ -101,4 +101,5 @@ function removeDuplicates(
   return featureCollection(cleaned);
 }
 
+export { concave };
 export default concave;

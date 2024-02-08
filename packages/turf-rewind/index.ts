@@ -9,8 +9,8 @@ import type {
   Polygon,
   FeatureCollection,
 } from "geojson";
-import clone from "@turf/clone";
-import booleanClockwise from "@turf/boolean-clockwise";
+import { clone } from "@turf/clone";
+import { booleanClockwise } from "@turf/boolean-clockwise";
 import { geomEach, featureEach } from "@turf/meta";
 import { getCoords } from "@turf/invariant";
 import { featureCollection, isObject } from "@turf/helpers";
@@ -157,4 +157,5 @@ function rewindPolygon(coords: Position[][], reverse: boolean) {
   }
 }
 
+export { rewind };
 export default rewind;

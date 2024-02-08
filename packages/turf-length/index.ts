@@ -1,5 +1,5 @@
 import { Feature, FeatureCollection, GeometryCollection } from "geojson";
-import distance from "@turf/distance";
+import { distance } from "@turf/distance";
 import { Units } from "@turf/helpers";
 import { segmentReduce } from "@turf/meta";
 
@@ -19,7 +19,7 @@ import { segmentReduce } from "@turf/meta";
  * var addToMap = [line];
  * line.properties.distance = length;
  */
-export default function length(
+function length(
   geojson: Feature<any> | FeatureCollection<any> | GeometryCollection,
   options: {
     units?: Units;
@@ -35,3 +35,6 @@ export default function length(
     0
   );
 }
+
+export { length };
+export default length;

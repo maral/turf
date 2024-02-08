@@ -1,6 +1,6 @@
 import { flattenEach, featureEach } from "@turf/meta";
 import { polygon, featureCollection } from "@turf/helpers";
-import simplepolygon from "./lib/simplepolygon";
+import { simplepolygon } from "./lib/simplepolygon";
 
 /**
  * Takes a kinked polygon and returns a feature collection of polygons that have no kinks.
@@ -28,4 +28,5 @@ function unkinkPolygon(geojson) {
   return featureCollection(features);
 }
 
+export { unkinkPolygon };
 export default unkinkPolygon;

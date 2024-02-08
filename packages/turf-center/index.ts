@@ -1,5 +1,5 @@
 import { BBox, Feature, GeoJsonProperties, Point } from "geojson";
-import bbox from "@turf/bbox";
+import { bbox } from "@turf/bbox";
 import { point, Id, AllGeoJSON } from "@turf/helpers";
 
 /**
@@ -36,4 +36,5 @@ function center<P extends GeoJsonProperties = GeoJsonProperties>(
   return point([x, y], options.properties, options);
 }
 
+export { center };
 export default center;

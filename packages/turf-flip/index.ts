@@ -1,6 +1,6 @@
 import { coordEach } from "@turf/meta";
 import { isObject, AllGeoJSON } from "@turf/helpers";
-import clone from "@turf/clone";
+import { clone } from "@turf/clone";
 
 /**
  * Takes input features and flips all of their coordinates from `[x, y]` to `[y, x]`.
@@ -44,4 +44,5 @@ function flip<T extends AllGeoJSON>(
   return geojson;
 }
 
+export { flip };
 export default flip;

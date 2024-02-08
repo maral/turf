@@ -6,8 +6,8 @@ import {
   Polygon,
 } from "geojson";
 import { featureCollection } from "@turf/helpers";
-import Graph from "./lib/Graph";
-import EdgeRing from "./lib/EdgeRing";
+import { Graph } from "./lib/Graph";
+import { EdgeRing } from "./lib/EdgeRing";
 
 /**
  * Polygonizes {@link LineString|(Multi)LineString(s)} into {@link Polygons}.
@@ -27,7 +27,7 @@ import EdgeRing from "./lib/EdgeRing";
  * @returns {FeatureCollection<Polygon>} Polygons created
  * @throws {Error} if geoJson is invalid.
  */
-export default function polygonize<T extends LineString | MultiLineString>(
+function polygonize<T extends LineString | MultiLineString>(
   geoJson: Feature<T> | FeatureCollection<T> | T
 ): FeatureCollection<Polygon> {
   const graph = Graph.fromGeoJson(geoJson);
@@ -58,3 +58,6 @@ export default function polygonize<T extends LineString | MultiLineString>(
   // 5. EdgeRings to Polygons
   return featureCollection(shells.map((shell) => shell.toPolygon()));
 }
+
+export { polygonize };
+export default polygonize;

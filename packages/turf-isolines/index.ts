@@ -1,9 +1,10 @@
-import bbox from "@turf/bbox";
+import { bbox } from "@turf/bbox";
 import { coordEach } from "@turf/meta";
 import { collectionOf } from "@turf/invariant";
 import { multiLineString, featureCollection, isObject } from "@turf/helpers";
-const { isoContours } = require("marchingsquares");
-import gridToMatrix from "./lib/grid-to-matrix";
+// @ts-expect-error Legacy JS library with no types defined
+import { isoContours } from "marchingsquares";
+import { gridToMatrix } from "./lib/grid-to-matrix";
 import {
   FeatureCollection,
   Point,
@@ -163,4 +164,5 @@ function rescaleIsolines(
   return createdIsoLines;
 }
 
+export { isolines };
 export default isolines;

@@ -1,7 +1,7 @@
 import { Feature, Geometry, LineString, Position } from "geojson";
-import cleanCoords from "@turf/clean-coords";
-import lineSegment from "@turf/line-segment";
-import rhumbBearing from "@turf/rhumb-bearing";
+import { cleanCoords } from "@turf/clean-coords";
+import { lineSegment } from "@turf/line-segment";
+import { rhumbBearing } from "@turf/rhumb-bearing";
 import { bearingToAzimuth } from "@turf/helpers";
 
 /**
@@ -71,4 +71,5 @@ function getType(geojson: Geometry | Feature<any>, name: string) {
   throw new Error("Invalid GeoJSON object for " + name);
 }
 
+export { booleanParallel };
 export default booleanParallel;

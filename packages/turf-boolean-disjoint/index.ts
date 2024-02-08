@@ -1,8 +1,8 @@
 import { Feature, Geometry, LineString, Point, Polygon } from "geojson";
-import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
-import lineIntersect from "@turf/line-intersect";
+import { booleanPointInPolygon } from "@turf/boolean-point-in-polygon";
+import { lineIntersect } from "@turf/line-intersect";
 import { flattenEach } from "@turf/meta";
-import polygonToLine from "@turf/polygon-to-line";
+import { polygonToLine } from "@turf/polygon-to-line";
 
 /**
  * Boolean-disjoint returns (TRUE) if the intersection of the two geometries is an empty set.
@@ -185,4 +185,5 @@ function compareCoords(pair1: number[], pair2: number[]) {
   return pair1[0] === pair2[0] && pair1[1] === pair2[1];
 }
 
+export { booleanDisjoint };
 export default booleanDisjoint;

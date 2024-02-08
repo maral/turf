@@ -1,7 +1,7 @@
-import bbox from "@turf/bbox";
-import area from "@turf/area";
-import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
-import explode from "@turf/explode";
+import { bbox } from "@turf/bbox";
+import { area } from "@turf/area";
+import { booleanPointInPolygon } from "@turf/boolean-point-in-polygon";
+import { explode } from "@turf/explode";
 import { collectionOf } from "@turf/invariant";
 import {
   polygon,
@@ -20,8 +20,8 @@ import {
   Feature,
 } from "geojson";
 
-import gridToMatrix from "./lib/grid-to-matrix";
-const { isoBands } = require("marchingsquares");
+import { gridToMatrix } from "./lib/grid-to-matrix";
+import { isoBands } from "marchingsquares";
 
 type GroupRingProps = { [prop: string]: string };
 type GroupedRings =
@@ -281,4 +281,5 @@ function allGrouped(
   return true;
 }
 
+export { isobands };
 export default isobands;

@@ -1,6 +1,6 @@
 import { Feature, GeoJsonProperties, Point, Position } from "geojson";
-import convex from "@turf/convex";
-import centroid from "@turf/centroid";
+import { convex } from "@turf/convex";
+import { centroid } from "@turf/centroid";
 import { point } from "@turf/helpers";
 import { getType, getCoord } from "@turf/invariant";
 import { coordEach } from "@turf/meta";
@@ -95,4 +95,5 @@ function centerOfMass<P extends GeoJsonProperties = GeoJsonProperties>(
   }
 }
 
+export { centerOfMass };
 export default centerOfMass;
